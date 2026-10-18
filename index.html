@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -338,7 +337,46 @@
 </div>
 
 </section>
+<div id="dreamDelivery" title="Send a little dream">💌</div>
 
+<style>
+#dreamDelivery {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  font-size: 38px;
+  cursor: pointer;
+  z-index: 9999;
+  animation: dreamFloat 2s ease-in-out infinite;
+}
+#dreamDelivery.fly {
+  animation: dreamFly 1.5s ease-in-out forwards;
+}
+@keyframes dreamFloat {
+  50% { transform: translateY(-12px) rotate(8deg); }
+}
+@keyframes dreamFly {
+  to {
+    transform: translate(-180px, -300px) rotate(30deg) scale(.4);
+    opacity: 0;
+  }
+}
+</style>
+
+<script>
+const dream = document.getElementById("dreamDelivery");
+
+dream.addEventListener("click", () => {
+  dream.classList.remove("fly");
+  void dream.offsetWidth;
+  dream.classList.add("fly");
+
+  setTimeout(() => {
+    alert("✨ A little dream is on its way! Keep believing in your magic. 💗");
+    dream.classList.remove("fly");
+  }, 1500);
+});
+</script>
 </body>
 </html>
 
