@@ -1,0 +1,2809 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+  --cream: #fbf8ef;
+  --cream-deep: #f2efdf;
+  --green: #315b45;
+  --green-light: #66876c;
+  --dark: #203b2d;
+  --coral: #e99579;
+  --yellow: #f4d58b;
+  --text: #586b5d;
+  --white: #fffdf7;
+  --border: #e7e4d6;
+  --shadow: 0 20px 60px #29452a12;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: 'DM Sans', 'Trebuchet MS', Arial, sans-serif;
+  overflow-x: hidden;
+  transition: background .4s, color .4s;
+}
+
+body, button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button:focus-visible, a:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 4px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.page-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 80% 12%, #e6ead333, transparent 38%),
+    radial-gradient(ellipse at 10% 80%, #f4d58b12, transparent 35%);
+}
+
+.section-wrap {
+  width: min(1120px, 86%);
+  margin-inline: auto;
+}
+
+/* NAVIGATION */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 76px;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: #fbf8efeF;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #315b4515;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--green);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  white-space: nowrap;
+}
+
+.logo span {
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 3vw, 32px);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.nav-links a {
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--coral);
+}
+
+.icon-button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--green);
+  font-size: 1.15rem;
+  transition: transform .2s;
+}
+
+.icon-button:hover {
+  transform: rotate(-12deg) scale(1.08);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 690px;
+  padding-block: 72px 95px;
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  align-items: center;
+  gap: 25px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 3;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  margin-bottom: 25px;
+  border-radius: 99px;
+  background: #e5eadb;
+  color: var(--green);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green-light);
+  box-shadow: 0 0 0 4px #66876c20;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+h1 {
+  font-size: clamp(3.5rem, 6.3vw, 6rem);
+  line-height: .99;
+  letter-spacing: -.065em;
+  color: var(--dark);
+}
+
+.coral-text {
+  color: var(--coral);
+}
+
+.hero-description {
+  max-width: 460px;
+  margin-top: 26px;
+  color: var(--text);
+  font-size: 1.08rem;
+  line-height: 1.95;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.primary-button, .secondary-button {
+  min-height: 52px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 21px;
+  border-radius: 14px;
+  font-size: .93rem;
+  font-weight: 700;
+  transition: transform .25s, background .25s, box-shadow .25s;
+}
+
+.primary-button {
+  color: white;
+  background: var(--green);
+  border: 1px solid var(--green);
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+  background: #244734;
+  box-shadow: 0 10px 25px #315b4525;
+}
+
+.primary-button span {
+  font-size: 1.2rem;
+}
+
+.secondary-button {
+  color: var(--green);
+  border: 1px solid #cbd6c6;
+  background: transparent;
+}
+
+.secondary-button:hover {
+  background: #e9eddf;
+  transform: translateY(-2px);
+}
+
+.tiny-note {
+  margin-top: 25px;
+  color: #879184;
+  font-size: .78rem;
+}
+
+.tiny-note span {
+  color: var(--coral);
+}
+
+/* MAGICAL SCENE */
+
+.scene {
+  position: relative;
+  min-width: 0;
+  min-height: 490px;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  perspective: 900px;
+}
+
+.orb-halo {
+  position: absolute;
+  width: 83%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #e6e9d5;
+  filter: blur(25px);
+  opacity: .45;
+  z-index: -4;
+}
+
+.dream-orb {
+  position: absolute;
+  width: min(82%, 355px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #e9ebd5, #dce4c8);
+  box-shadow: inset -18px -20px 45px #c9d5b455;
+  z-index: -3;
+}
+
+.floating-island {
+  position: absolute;
+  bottom: 55px;
+  width: 84%;
+  height: 90px;
+  border-radius: 50%;
+  background: #80a87b;
+  box-shadow:
+    inset 0 -17px 0 #557b59,
+    0 15px 0 #d9ba6e;
+  transform: rotate(-5deg);
+  z-index: -1;
+}
+
+.island-grass {
+  position: absolute;
+  bottom: 118px;
+  width: 74%;
+  height: 38px;
+  border-radius: 50%;
+  background: #91bd89;
+  transform: rotate(-5deg);
+  z-index: -1;
+}
+
+.mochi-character {
+  display: block;
+  position: relative;
+  z-index: 2;
+  width: min(76%, 320px);
+  max-height: 370px;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 18px 12px #29452a25);
+  transform-origin: center bottom;
+  animation: mochiFloat 3.6s ease-in-out infinite;
+  will-change: transform;
+  transition: filter .25s;
+}
+
+.mochi-character:hover {
+  filter: drop-shadow(0 23px 16px #29452a32);
+}
+
+.mochi-character.jumping {
+  animation: mochiJump .72s ease;
+}
+
+.scene-label {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  max-width: 90%;
+  padding: 12px 18px;
+  border-radius: 99px;
+  background: #fffdf5;
+  color: var(--dark);
+  box-shadow: var(--shadow);
+  font-size: .82rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scene-hint {
+  position: absolute;
+  bottom: -29px;
+  color: #8a9686;
+  font-size: .72rem;
+}
+
+.cloud {
+  position: absolute;
+  width: 76px;
+  height: 25px;
+  border-radius: 30px;
+  background: #fff;
+  opacity: .94;
+  animation: cloudFloat 6s ease-in-out infinite;
+  z-index: -1;
+}
+
+.cloud::before, .cloud::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.cloud::before {
+  width: 36px;
+  height: 36px;
+  top: -17px;
+  left: 12px;
+}
+
+.cloud::after {
+  width: 27px;
+  height: 27px;
+  top: -10px;
+  right: 11px;
+}
+
+.cloud-one {
+  top: 75px;
+  left: 0;
+}
+
+.cloud-two {
+  top: 135px;
+  right: 0;
+  transform: scale(.7);
+  animation-delay: -2s;
+}
+
+.cloud-three {
+  top: 35px;
+  left: 48%;
+  transform: scale(.48);
+  opacity: .65;
+  animation-delay: -4s;
+}
+
+.star {
+  position: absolute;
+  z-index: 1;
+  color: #e9bd50;
+  font-size: 27px;
+  pointer-events: none;
+  animation: starTwinkle 2.4s ease-in-out infinite;
+}
+
+.star-one {
+  top: 53px;
+  right: 20%;
+}
+
+.star-two {
+  top: 220px;
+  left: 5%;
+  animation-delay: .7s;
+}
+
+.star-three {
+  bottom: 150px;
+  right: 7%;
+  animation-delay: 1.2s;
+}
+
+.star-four {
+  top: 160px;
+  right: 6%;
+  font-size: 17px;
+  animation-delay: 1.7s;
+}
+
+.flower {
+  position: absolute;
+  z-index: 1;
+  color: #e99579;
+  font-size: 20px;
+  animation: flowerSway 3s ease-in-out infinite;
+}
+
+.flower-one {
+  bottom: 130px;
+  left: 19%;
+}
+
+.flower-two {
+  bottom: 115px;
+  right: 20%;
+  color: #f1cc71;
+  animation-delay: -1.2s;
+}
+
+.cursor-sparkle {
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+  color: var(--coral);
+  animation: sparkleFade .75s ease-out forwards;
+}
+
+/* STORY */
+
+.story-section {
+  padding-block: 85px 105px;
+}
+
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 46px;
+}
+
+.section-kicker {
+  display: inline-block;
+  color: #c87f68;
+  font-size: .73rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.section-heading h2, .mood-intro h2, .about-copy h2, .secret-inner h2 {
+  margin-top: 14px;
+  font-size: clamp(2.5rem, 4.5vw, 4.1rem);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+}
+
+.section-heading > p, .mood-intro > p, .about-copy > p {
+  max-width: 580px;
+  margin-top: 17px;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.story-timeline {
+  display: grid;
+  gap: 42px;
+  max-width: 940px;
+  margin-inline: auto;
+}
+
+.story-step {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: clamp(25px, 6vw, 75px);
+}
+
+.story-step.reverse .story-art {
+  order: 2;
+}
+
+.story-step.reverse .story-copy {
+  order: 1;
+}
+
+.story-art {
+  position: relative;
+  min-height: 235px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 32px;
+  background: #e9ecdd;
+}
+
+.story-art > span {
+  position: relative;
+  z-index: 1;
+  font-size: 6rem;
+  filter: drop-shadow(0 12px 10px #29452a18);
+  animation: artFloat 3.2s ease-in-out infinite;
+}
+
+.story-art i {
+  position: absolute;
+  top: 27px;
+  right: 30px;
+  color: #d6ac48;
+  font-size: 2rem;
+  font-style: normal;
+}
+
+.art-cloud {
+  background: linear-gradient(145deg, #e7eddf, #f8e8ce);
+}
+
+.art-seed {
+  background: linear-gradient(145deg, #e8efdd, #d9e7d3);
+}
+
+.art-island {
+  background: linear-gradient(145deg, #f6e9d0, #e3ebd8);
+}
+
+.step-number {
+  color: #c87f68;
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.story-copy h3 {
+  margin-top: 13px;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.story-copy p {
+  margin-top: 14px;
+  color: var(--text);
+  line-height: 1.9;
+}
+
+.story-ending {
+  margin-top: 65px;
+  text-align: center;
+}
+
+.story-ending > span {
+  color: #d9b04d;
+  font-size: 2.2rem;
+}
+
+.story-ending p {
+  margin-top: 10px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--green);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.text-link:hover {
+  color: var(--coral);
+}
+
+/* DREAM GARDEN */
+
+.dreams-section {
+  padding-block: 90px 105px;
+  background: #eef0e2;
+}
+
+.dreams-section .section-heading {
+  margin-bottom: 36px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+}
+
+.project-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 18px 18px 23px;
+  border: 1px solid #e2e5d6;
+  border-radius: 25px;
+  background: #fffdf7;
+  color: var(--dark);
+  text-align: left;
+  box-shadow: 0 5px 20px #304c2505;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.project-card:hover, .project-card:focus-visible {
+  transform: translateY(-8px);
+  border-color: #bdcdb5;
+  box-shadow: 0 18px 38px #304c2513;
+}
+
+.project-card[aria-expanded="true"] {
+  border-color: var(--green-light);
+  box-shadow: 0 0 0 3px #66876c17;
+}
+
+.project-art {
+  position: relative;
+  width: 100%;
+  min-height: 185px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.project-art > span {
+  font-size: 4.6rem;
+  filter: drop-shadow(0 9px 8px #29452a16);
+  transition: transform .3s;
+}
+
+.project-card:hover .project-art > span {
+  transform: translateY(-6px) rotate(-5deg) scale(1.06);
+}
+
+.project-art i {
+  position: absolute;
+  top: 17px;
+  right: 20px;
+  color: #d9b14d;
+  font-size: 1.4rem;
+  font-style: normal;
+}
+
+.wish-art {
+  background: linear-gradient(140deg, #f9e7db, #f5f0dc);
+}
+
+.sprout-art {
+  background: linear-gradient(140deg, #e5eddb, #f1efd9);
+}
+
+.orbit-art {
+  background: linear-gradient(140deg, #e6e8dd, #f7e7c9);
+}
+
+.project-number {
+  color: #c87f68;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.project-title {
+  margin-top: 9px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.project-description {
+  min-height: 66px;
+  margin-top: 10px;
+  color: var(--text);
+  font-size: .9rem;
+  line-height: 1.8;
+}
+
+.project-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 19px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+  color: var(--green);
+  font-size: .83rem;
+  font-weight: 800;
+}
+
+.project-link span {
+  font-size: 1.1rem;
+}
+
+.project-detail {
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  margin-top: 28px;
+  padding: 30px;
+  border: 1px solid #dce4d5;
+  border-radius: 24px;
+  background: #fffdf7;
+  box-shadow: var(--shadow);
+  animation: detailAppear .4s ease both;
+}
+
+.project-detail[hidden] {
+  display: none;
+}
+
+.detail-icon {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: #e9eddf;
+  font-size: 2.5rem;
+}
+
+.detail-copy h3 {
+  margin-top: 8px;
+  font-size: 1.8rem;
+}
+
+.detail-copy p {
+  margin-top: 10px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.detail-extra {
+  font-size: .9rem;
+}
+
+.detail-close {
+  position: absolute;
+  top: 14px;
+  right: 17px;
+  width: 35px;
+  height: 35px;
+  border: 0;
+  border-radius: 50%;
+  background: #f1efe5;
+  color: var(--green);
+  font-size: 1.4rem;
+}
+
+/* MOOD MAGIC */
+
+.mood-section {
+  padding-block: 105px;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: clamp(35px, 7vw, 90px);
+}
+
+.mood-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.mood-preview {
+  position: relative;
+  min-height: 245px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 25px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #f7e9c9, #e8ecd9);
+  transition: background .45s;
+}
+
+.preview-sun {
+  position: absolute;
+  top: 23px;
+  left: 25px;
+  color: #e6b84e;
+  font-size: 2.3rem;
+  animation: starTwinkle 3s ease-in-out infinite;
+}
+
+.preview-star {
+  position: absolute;
+  top: 40px;
+  right: 32px;
+  color: #d9b04d;
+  font-size: 2rem;
+}
+
+.preview-cloud {
+  position: absolute;
+  right: 15%;
+  bottom: 45px;
+  color: #fffdf8;
+  font-size: 4.3rem;
+  opacity: .8;
+}
+
+.preview-message {
+  position: relative;
+  z-index: 2;
+  max-width: 260px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.55rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.mood-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.mood-button {
+  flex: 1;
+  min-width: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 10px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--dark);
+  font-size: .85rem;
+  font-weight: 700;
+  transition: background .2s, color .2s, border-color .2s;
+}
+
+.mood-button.active {
+  color: white;
+  border-color: var(--green);
+  background: var(--green);
+}
+
+.mood-caption {
+  margin-top: 17px;
+  color: var(--text);
+  font-size: .85rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.mood-preview.mood-dreamy {
+  background: linear-gradient(145deg, #dfe5ed, #c6d1d6);
+}
+
+.mood-preview.mood-dreamy .preview-sun {
+  color: #7c8aab;
+}
+
+.mood-preview.mood-dreamy .preview-star {
+  color: #fff4c9;
+}
+
+.mood-preview.mood-brave {
+  background: linear-gradient(145deg, #d7e7c9, #b8d4b0);
+}
+
+.mood-preview.mood-brave .preview-sun {
+  color: #d5a83d;
+}
+
+.mood-preview.mood-brave .preview-star {
+  color: #e99579;
+}
+
+/* CHARACTER SHEET */
+
+.about-section {
+  padding-block: 80px 105px;
+  background: #f0efe2;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: clamp(35px, 7vw, 85px);
+}
+
+.about-visual {
+  position: relative;
+  min-height: 440px;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.about-orb {
+  position: absolute;
+  width: 88%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #e1e8d0, #f2e8d2);
+  z-index: -1;
+}
+
+.about-mochi {
+  width: min(83%, 350px);
+  max-height: 390px;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 14px #29452a20);
+  animation: mochiFloat 4s ease-in-out infinite;
+}
+
+.about-star {
+  position: absolute;
+  color: #e4b64d;
+  font-size: 2rem;
+  animation: starTwinkle 2.5s ease-in-out infinite;
+}
+
+.about-star-one {
+  top: 60px;
+  right: 14%;
+}
+
+.about-star-two {
+  left: 7%;
+  bottom: 115px;
+}
+
+.about-sticker {
+  position: absolute;
+  right: 0;
+  bottom: 25px;
+  padding: 13px 20px;
+  border-radius: 99px;
+  background: var(--white);
+  color: var(--green);
+  box-shadow: var(--shadow);
+  font-size: .8rem;
+  font-weight: 700;
+  transform: rotate(5deg);
+}
+
+.character-sheet {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 27px;
+}
+
+.character-sheet > div {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 12px;
+  border: 1px solid #e3e3d5;
+  border-radius: 16px;
+  background: #fffdf7;
+}
+
+.character-sheet > div > span {
+  flex-shrink: 0;
+  color: var(--coral);
+  font-size: 1.25rem;
+}
+
+.character-sheet small {
+  display: block;
+  margin-bottom: 5px;
+  color: #879184;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.character-sheet strong {
+  display: block;
+  overflow-wrap: anywhere;
+  color: var(--green);
+  font-size: .81rem;
+}
+
+.about-copy blockquote {
+  margin-top: 26px;
+  padding-left: 16px;
+  border-left: 3px solid var(--coral);
+  color: var(--green);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* SECRET */
+
+.secret-section {
+  padding: 85px 7%;
+  overflow: hidden;
+  background: #244734;
+  color: #fff9e9;
+}
+
+.secret-inner {
+  max-width: 650px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.secret-flower {
+  margin-bottom: 15px;
+  font-size: 3rem;
+  animation: flowerSway 3s ease-in-out infinite;
+}
+
+.secret-inner .section-kicker {
+  color: #f1c8a7;
+}
+
+.secret-inner h2 {
+  font-size: clamp(2.4rem, 5vw, 3.7rem);
+}
+
+.secret-inner h2 span {
+  color: var(--yellow);
+}
+
+.secret-inner > p:not(.secret-result) {
+  max-width: 480px;
+  margin: 18px auto 0;
+  color: #e0e8d9;
+  line-height: 1.9;
+}
+
+.secret-button {
+  margin-top: 27px;
+  padding: 14px 22px;
+  border: 1px solid #b4c9ad;
+  border-radius: 99px;
+  background: transparent;
+  color: #fff9e9;
+  font-size: .9rem;
+  font-weight: 700;
+  transition: background .2s, color .2s;
+}
+
+.secret-button:hover {
+  background: #fff9e9;
+  color: var(--green);
+}
+
+.secret-result {
+  min-height: 25px;
+  margin-top: 22px;
+  color: var(--yellow);
+  font-size: .95rem;
+  line-height: 1.8;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 38px 7% 25px;
+  text-align: center;
+}
+
+.footer .logo {
+  justify-content: center;
+}
+
+.footer > p {
+  margin-top: 12px;
+  color: var(--text);
+  font-size: .84rem;
+}
+
+.footer-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 17px;
+  margin-top: 20px;
+}
+
+.sound-toggle, .back-top {
+  padding: 10px 15px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--green);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.back-top {
+  background: var(--white);
+}
+
+.footer > small {
+  display: block;
+  margin-top: 24px;
+  color: #879184;
+  font-size: .72rem;
+}
+
+/* SECRET FLOWER */
+
+.hidden-flower {
+  position: fixed;
+  z-index: 110;
+  top: 88px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #fbf8ef;
+  font-size: 1rem;
+  opacity: .2;
+  transition: opacity .25s, transform .25s, color .25s;
+}
+
+.hidden-flower:hover, .hidden-flower.hinted {
+  color: var(--coral);
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+body.secret-found .hidden-flower {
+  color: var(--coral);
+  opacity: 1;
+  animation: flowerSway 1.5s ease-in-out infinite;
+}
+
+/* TOAST */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 200;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  padding: 13px 20px;
+  border: 1px solid #ffffff30;
+  border-radius: 99px;
+  background: var(--green);
+  color: white;
+  box-shadow: 0 12px 35px #203b2d25;
+  font-size: .85rem;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, 15px);
+  transition: opacity .25s, transform .25s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* REVEAL */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .75s ease, transform .75s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.story-step:nth-child(2) {
+  transition-delay: .08s;
+}
+
+.story-step:nth-child(3) {
+  transition-delay: .15s;
+}
+
+/* NIGHT MODE */
+
+body.night {
+  --cream: #1d3028;
+  --cream-deep: #263b30;
+  --dark: #f4f0df;
+  --text: #c5d1c1;
+  --white: #2b4034;
+  --border: #465d4a;
+  background: var(--cream);
+  color: var(--dark);
+}
+
+body.night .navbar {
+  background: #1d3028ed;
+  border-color: #ffffff15;
+}
+
+body.night .logo,
+body.night .text-link,
+body.night .character-sheet strong,
+body.night .about-copy blockquote {
+  color: #d7e7c9;
+}
+
+body.night .eyebrow,
+body.night .secondary-button {
+  background: #304638;
+  color: #d7e7c9;
+  border-color: #526a54;
+}
+
+body.night h1,
+body.night h2,
+body.night h3 {
+  color: #f4f0df;
+}
+
+body.night .dream-orb {
+  background: linear-gradient(145deg, #3a5140, #2b4133);
+  box-shadow: inset -18px -20px 45px #14281b55;
+}
+
+body.night .orb-halo {
+  background: #66876c;
+  opacity: .2;
+}
+
+body.night .scene-label {
+  background: #31483a;
+  color: #fff9e9;
+}
+
+body.night .story-art {
+  background: linear-gradient(145deg, #304638, #3c5140);
+}
+
+body.night .dreams-section,
+body.night .about-section {
+  background: #24392e;
+}
+
+body.night .project-card,
+body.night .project-detail,
+body.night .character-sheet > div,
+body.night .mood-card {
+  background: #2b4034;
+  border-color: #465d4a;
+  color: #f4f0df;
+}
+
+body.night .project-art {
+  background: linear-gradient(145deg, #354b3c, #4b5740);
+}
+
+body.night .project-link {
+  border-color: #465d4a;
+  color: #d7e7c9;
+}
+
+body.night .detail-icon,
+body.night .detail-close {
+  background: #3b5140;
+  color: #f4f0df;
+}
+
+body.night .mood-preview.mood-dreamy {
+  background: linear-gradient(145deg, #35445c, #414f66);
+}
+
+body.night .mood-preview.mood-brave {
+  background: linear-gradient(145deg, #385542, #4d6c4e);
+}
+
+body.night .mood-button {
+  color: #f4f0df;
+  border-color: #526a54;
+}
+
+body.night .mood-button.active {
+  background: #7ea879;
+  color: #152b1d;
+}
+
+body.night .about-orb {
+  background: linear-gradient(145deg, #304638, #3e5040);
+}
+
+body.night .about-sticker,
+body.night .back-top {
+  background: #31483a;
+  color: #f4f0df;
+}
+
+body.night .icon-button {
+  background: #304638;
+  border-color: #526a54;
+  color: #f4f0df;
+}
+
+body.night .tiny-note,
+body.night .scene-hint,
+body.night .character-sheet small {
+  color: #a8b9a7;
+}
+
+/* ANIMATIONS */
+
+@keyframes mochiFloat {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes mochiJump {
+  0%, 100% { transform: translateY(0) scale(1); }
+  35% { transform: translateY(-35px) scale(1.05, .96); }
+  60% { transform: translateY(0) scale(.96, 1.04); }
+  80% { transform: translateY(-9px) scale(1.02, .99); }
+}
+
+@keyframes cloudFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 12px -8px; }
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: .65; scale: .85; }
+  50% { opacity: 1; scale: 1.15; }
+}
+
+@keyframes flowerSway {
+  0%, 100% { rotate: -6deg; }
+  50% { rotate: 7deg; }
+}
+
+@keyframes artFloat {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes sparkleFade {
+  0% { opacity: 1; transform: translateY(0) scale(.6); }
+  100% { opacity: 0; transform: translateY(-30px) scale(1.4); }
+}
+
+@keyframes detailAppear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .section-wrap {
+    width: 88%;
+  }
+
+  .hero {
+    min-height: 620px;
+    grid-template-columns: 1fr .9fr;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 7vw, 4.8rem);
+  }
+
+  .scene {
+    min-height: 410px;
+  }
+
+  .mochi-character {
+    width: 82%;
+    max-height: 320px;
+  }
+
+  .dream-orb {
+    width: 90%;
+  }
+
+  .project-grid {
+    gap: 14px;
+  }
+
+  .project-card {
+    padding: 13px 13px 19px;
+  }
+
+  .project-art {
+    min-height: 150px;
+  }
+
+  .mood-section, .about-grid {
+    gap: 35px;
+  }
+
+  .character-sheet {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  .section-wrap {
+    width: 88%;
+  }
+
+  .navbar {
+    min-height: 68px;
+    padding: 15px 6%;
+  }
+
+  .logo {
+    font-size: 1.15rem;
+  }
+
+  .nav-links {
+    gap: 13px;
+    font-size: .8rem;
+  }
+
+  .icon-button {
+    width: 33px;
+    height: 33px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-block: 52px 65px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: clamp(3.4rem, 12vw, 5rem);
+  }
+
+  .hero-description {
+    margin-inline: auto;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .tiny-note {
+    margin-top: 19px;
+  }
+
+  .scene {
+    width: min(100%, 450px);
+    min-height: 405px;
+    margin-inline: auto;
+  }
+
+  .mochi-character {
+    width: min(75%, 285px);
+    max-height: 315px;
+  }
+
+  .dream-orb {
+    width: min(82%, 330px);
+  }
+
+  .cloud-one {
+    left: 2%;
+  }
+
+  .cloud-two {
+    right: 0;
+  }
+
+  .story-section, .dreams-section {
+    padding-block: 68px 75px;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .section-heading h2,
+  .mood-intro h2,
+  .about-copy h2 {
+    font-size: clamp(2.35rem, 9vw, 3.3rem);
+  }
+
+  .story-timeline {
+    gap: 30px;
+  }
+
+  .story-step,
+  .story-step.reverse {
+    grid-template-columns: 1fr;
+    gap: 19px;
+  }
+
+  .story-step.reverse .story-art,
+  .story-step.reverse .story-copy {
+    order: initial;
+  }
+
+  .story-art {
+    min-height: 220px;
+  }
+
+  .story-art > span {
+    font-size: 5rem;
+  }
+
+  .story-ending {
+    margin-top: 45px;
+  }
+
+  .story-ending p {
+    font-size: 1.2rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .project-card {
+    padding: 15px;
+    border-radius: 22px;
+  }
+
+  .project-art {
+    min-height: 185px;
+  }
+
+  .project-description {
+    min-height: 0;
+  }
+
+  .project-detail {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 23px;
+  }
+
+  .detail-icon {
+    width: 62px;
+    height: 62px;
+    font-size: 2rem;
+  }
+
+  .detail-copy h3 {
+    font-size: 1.6rem;
+  }
+
+  .mood-section {
+    grid-template-columns: 1fr;
+    gap: 27px;
+    padding-block: 75px;
+  }
+
+  .mood-card {
+    padding: 14px;
+  }
+
+  .mood-preview {
+    min-height: 220px;
+  }
+
+  .about-section {
+    padding-block: 65px 75px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-visual {
+    min-height: 360px;
+    width: min(100%, 410px);
+    margin-inline: auto;
+  }
+
+  .about-mochi {
+    width: min(78%, 300px);
+    max-height: 320px;
+  }
+
+  .character-sheet {
+    gap: 9px;
+  }
+
+  .character-sheet > div {
+    padding: 12px 9px;
+    gap: 8px;
+  }
+
+  .character-sheet strong {
+    font-size: .75rem;
+  }
+
+  .secret-section {
+    padding: 70px 7%;
+  }
+
+  .footer {
+    padding-inline: 6%;
+  }
+}
+
+@media (max-width: 390px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-button, .secondary-button {
+    width: 100%;
+  }
+
+  .scene {
+    min-height: 355px;
+  }
+
+  .mochi-character {
+    width: 77%;
+    max-height: 280px;
+  }
+
+  .scene-label {
+    font-size: .72rem;
+    padding: 10px 13px;
+  }
+
+  .character-sheet {
+    grid-template-columns: 1fr;
+  }
+
+  .mood-controls {
+    gap: 6px;
+  }
+
+  .mood-button {
+    min-width: 0;
+    padding-inline: 7px;
+    font-size: .77rem;
+  }
+
+  .hidden-flower {
+    top: 118px;
+  }
+}
+
+/* ACCESSIBILITY: reduce motion when requested by device settings */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===== MOCHI MAGIC EFFECTS ===== */
+
+.scene {
+  overflow: hidden;
+}
+
+.mochi-doll {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  filter: drop-shadow(0 12px 18px #f28b7380);
+  transition: filter 0.3s ease;
+}
+
+.mochi-doll.magic-glow {
+  filter:
+    drop-shadow(0 0 12px #ff9ed2)
+    drop-shadow(0 0 28px #ffd778);
+}
+
+/* Quick blink-like animation */
+.mochi-doll.blink {
+  animation: cuteBlink 0.45s ease-in-out;
+}
+
+@keyframes cuteBlink {
+  0%, 100% { transform: scaleY(1); }
+  35%, 55% { transform: scaleY(0.88); }
+  70% { transform: scaleY(1); }
+}
+
+/* Happy jump */
+.mochi-doll.happy {
+  animation: happyBounce 0.65s ease;
+}
+
+@keyframes happyBounce {
+  0%, 100% { translate: 0 0; }
+  35% { translate: 0 -28px; }
+  60% { translate: 0 0; }
+  80% { translate: 0 -8px; }
+}
+
+/* Floating hearts and magic particles */
+.mochi-particle {
+  position: absolute;
+  z-index: 8;
+  left: var(--start-x);
+  top: var(--start-y);
+  pointer-events: none;
+  user-select: none;
+  font-size: var(--particle-size, 24px);
+  line-height: 1;
+  animation: heartMagic var(--duration, 1.8s) ease-out forwards;
+  filter: drop-shadow(0 3px 5px #e9957940);
+}
+
+@keyframes heartMagic {
+  0% {
+    opacity: 0;
+    translate: 0 12px;
+    scale: 0.3;
+    rotate: 0deg;
+  }
+
+  15% {
+    opacity: 1;
+    scale: 1.15;
+  }
+
+  70% {
+    opacity: 1;
+    scale: 1;
+    rotate: var(--spin, 15deg);
+  }
+
+  100% {
+    opacity: 0;
+    translate: var(--drift, 15px) -150px;
+    scale: 0.65;
+    rotate: var(--spin, 15deg);
+  }
+}
+
+/* Little magical flash */
+.mochi-magic-flash {
+  position: absolute;
+  inset: 15%;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #fff7c980 0%,
+    #ffacd540 40%,
+    transparent 72%
+  );
+  animation: magicFlash 0.8s ease-out forwards;
+}
+
+@keyframes magicFlash {
+  0% { opacity: 0; scale: 0.4; }
+  35% { opacity: 1; scale: 1.15; }
+  100% { opacity: 0; scale: 1.5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mochi-particle,
+  .mochi-magic-flash {
+    animation-duration: 0.5s;
+  }
+}
+
+/* ===== MOCHI HEARTS & MAGIC ===== */
+
+#homeScene,
+.scene {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+#mochiCharacter,
+.mochi-doll {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  transform-origin: center bottom;
+  transition: filter 0.25s ease;
+  translate: var(--cursor-x, 0px) var(--cursor-y, 0px);
+}
+
+/* Happy jump */
+#mochiCharacter.jumping,
+.mochi-doll.jumping {
+  animation: mochiHappyJump 0.65s ease;
+}
+
+@keyframes mochiHappyJump {
+  0%, 100% { translate: var(--cursor-x, 0px) var(--cursor-y, 0px); }
+  35% { translate: var(--cursor-x, 0px) calc(var(--cursor-y, 0px) - 30px); }
+  60% { translate: var(--cursor-x, 0px) var(--cursor-y, 0px); }
+  80% { translate: var(--cursor-x, 0px) calc(var(--cursor-y, 0px) - 8px); }
+}
+
+/* Click blink effect.
+   This squashes the image slightly; a realistic eyelid blink
+   needs an image or overlay with closed eyes. */
+#mochiCharacter.blink,
+.mochi-doll.blink {
+  animation: mochiBlink 0.18s ease-in-out;
+}
+
+@keyframes mochiBlink {
+  0%, 100% { scale: 1 1; }
+  45%, 70% { scale: 1 0.88; }
+}
+
+/* Colourful glow */
+#mochiCharacter.magic-glow,
+.mochi-doll.magic-glow {
+  filter:
+    drop-shadow(0 0 10px #ff9ed2)
+    drop-shadow(0 0 22px #f5d778)
+    drop-shadow(0 12px 14px #f28b7350);
+}
+
+/* Floating hearts and sparkles */
+.mochi-particle {
+  position: absolute;
+  left: var(--start-x);
+  top: var(--start-y);
+  z-index: 9;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  font-size: var(--particle-size, 20px);
+  animation: mochiParticleFloat var(--duration, 1.8s) ease-out forwards;
+  filter: drop-shadow(0 3px 5px #e9957940);
+}
+
+@keyframes mochiParticleFloat {
+  0% {
+    opacity: 0;
+    translate: 0 12px;
+    scale: 0.35;
+    rotate: 0deg;
+  }
+  15% {
+    opacity: 1;
+    scale: 1.12;
+  }
+  70% {
+    opacity: 1;
+    scale: 1;
+    rotate: var(--spin, 15deg);
+  }
+  100% {
+    opacity: 0;
+    translate: var(--drift, 15px) -145px;
+    scale: 0.65;
+    rotate: var(--spin, 15deg);
+  }
+}
+
+/* Magic burst */
+.mochi-magic-flash {
+  position: absolute;
+  inset: 15%;
+  z-index: 2;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    #fff7c990 0%,
+    #ffacd550 35%,
+    #d9c8ff30 55%,
+    transparent 75%
+  );
+  animation: mochiFlash 0.85s ease-out forwards;
+}
+
+@keyframes mochiFlash {
+  0% { opacity: 0; scale: 0.4; }
+  35% { opacity: 1; scale: 1.05; }
+  100% { opacity: 0; scale: 1.5; }
+}
+
+/* Cursor trail */
+.cursor-sparkle {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  animation: cursorSparkleFade 0.8s ease-out forwards;
+}
+
+@keyframes cursorSparkleFade {
+  0% { opacity: 1; translate: 0 0; scale: 1; }
+  100% { opacity: 0; translate: 0 -15px; scale: 0.4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mochi-particle,
+  .mochi-magic-flash,
+  .cursor-sparkle {
+    animation-duration: 0.5s;
+  }
+}
+
+/* ===== MOCHI BUNNY CURSOR ===== */
+
+#bunnyCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  pointer-events: none;
+  user-select: none;
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  will-change: left, top;
+  filter: drop-shadow(0 3px 5px #e9957950);
+  transition: opacity 0.2s ease;
+}
+
+#bunnyCursor.visible {
+  opacity: 1;
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  #bunnyCursor {
+    display: none;
+  }
+}
+/* Hide normal cursor on desktop */
+@media (pointer: fine) {
+  body,
+  body * {
+    cursor: none !important;
+  }
+
+  #bunnyCursor {
+    display: block;
+  }
+}
+
+
+/* ==========================================
+   MOCHI'S WORLD — COMPLETE MOOD THEMES
+   Happy + Dreamy + Brave + Night Mode
+   ========================================== */
+
+
+/* HAPPY — Baby Blue + white */
+body.mood-happy:not(.night) {
+  --cream: #F2F9FF;
+  --cream-deep: #DDF0FF;
+  --green: #6CA9D8;
+  --green-light: #9CCFF2;
+  --dark: #29445B;
+  --coral: #82BCE8;
+  --yellow: #FFF0C2;
+  --text: #607D95;
+  --white: #FFFFFF;
+  --border: #D6E9F8;
+  --shadow: 0 20px 60px rgba(90, 155, 205, 0.14);
+
+  background: var(--cream);
+  color: var(--dark);
+}
+
+
+/* DREAMY — Lavender and soft pink */
+body.mood-dreamy:not(.night) {
+  --cream: #f7f0ff;
+  --cream-deep: #eee3ff;
+  --green: #8265ae;
+  --green-light: #ad91d4;
+  --dark: #49375f;
+  --coral: #d58dbb;
+  --yellow: #e8c9ff;
+  --text: #78688d;
+  --white: #fffaff;
+  --border: #e6d8f4;
+  --shadow: 0 20px 60px rgba(145, 111, 205, 0.14);
+
+  background: var(--cream);
+  color: var(--dark);
+}
+
+/* BRAVE — Sage green and fresh nature */
+body.mood-brave:not(.night) {
+  --cream: #f1f7ed;
+  --cream-deep: #deeed9;
+  --green: #426d4a;
+  --green-light: #8dbb91;
+  --dark: #344d3a;
+  --coral: #cf967c;
+  --yellow: #e8d48d;
+  --text: #607764;
+  --white: #fcfff9;
+  --border: #d8e5d2;
+  --shadow: 0 20px 60px rgba(93, 145, 100, 0.13);
+
+  background: var(--cream);
+  color: var(--dark);
+}
+
+/* Smooth full-page colour transition */
+body.mood-happy:not(.night),
+body.mood-dreamy:not(.night),
+body.mood-brave:not(.night) {
+  transition:
+    background-color 0.45s ease,
+    color 0.45s ease;
+}
+
+/* Navigation */
+body.mood-happy:not(.night) .navbar,
+body.mood-dreamy:not(.night) .navbar,
+body.mood-brave:not(.night) .navbar {
+  background: var(--cream);
+  border-bottom-color: var(--border);
+}
+
+body.mood-happy:not(.night) .logo,
+body.mood-dreamy:not(.night) .logo,
+body.mood-brave:not(.night) .logo {
+  color: var(--green);
+}
+
+/* Main page sections */
+body.mood-happy:not(.night) .dreams-section,
+body.mood-happy:not(.night) .about-section {
+  background: #E5F3FF;
+}
+
+body.mood-dreamy:not(.night) .dreams-section,
+body.mood-dreamy:not(.night) .about-section {
+  background: #eee5fb;
+}
+
+body.mood-brave:not(.night) .dreams-section,
+body.mood-brave:not(.night) .about-section {
+  background: #e4efde;
+}
+
+/* Hero and headings */
+body.mood-happy:not(.night) h1,
+body.mood-happy:not(.night) h2,
+body.mood-happy:not(.night) h3,
+body.mood-dreamy:not(.night) h1,
+body.mood-dreamy:not(.night) h2,
+body.mood-dreamy:not(.night) h3,
+body.mood-brave:not(.night) h1,
+body.mood-brave:not(.night) h2,
+body.mood-brave:not(.night) h3 {
+  color: var(--dark);
+}
+
+body.mood-happy:not(.night) .hero-description,
+body.mood-happy:not(.night) .section-heading > p,
+body.mood-happy:not(.night) .story-copy p,
+body.mood-happy:not(.night) .mood-intro > p,
+body.mood-happy:not(.night) .about-copy > p,
+body.mood-dreamy:not(.night) .hero-description,
+body.mood-dreamy:not(.night) .section-heading > p,
+body.mood-dreamy:not(.night) .story-copy p,
+body.mood-dreamy:not(.night) .mood-intro > p,
+body.mood-dreamy:not(.night) .about-copy > p,
+body.mood-brave:not(.night) .hero-description,
+body.mood-brave:not(.night) .section-heading > p,
+body.mood-brave:not(.night) .story-copy p,
+body.mood-brave:not(.night) .mood-intro > p,
+body.mood-brave:not(.night) .about-copy > p {
+  color: var(--text);
+}
+
+/* Hero decorations */
+body.mood-happy:not(.night) .eyebrow {
+  background: #ffebc8;
+  color: #986036;
+}
+
+body.mood-dreamy:not(.night) .eyebrow {
+  background: #e9ddff;
+  color: #74559e;
+}
+
+body.mood-brave:not(.night) .eyebrow {
+  background: #deeed9;
+  color: #426d4a;
+}
+
+body.mood-happy:not(.night) .dream-orb {
+  background: linear-gradient(145deg, #ffe9bd, #f8d6a5);
+}
+
+body.mood-dreamy:not(.night) .dream-orb {
+  background: linear-gradient(145deg, #e8d8ff, #d8c8f4);
+}
+
+body.mood-brave:not(.night) .dream-orb {
+  background: linear-gradient(145deg, #deebc9, #c5dfbd);
+}
+
+body.mood-happy:not(.night) .orb-halo {
+  background: #ffdfac;
+}
+
+body.mood-dreamy:not(.night) .orb-halo {
+  background: #d9c3ff;
+}
+
+body.mood-brave:not(.night) .orb-halo {
+  background: #c5e2bd;
+}
+
+/* Story cards */
+body.mood-happy:not(.night) .story-art {
+  background: linear-gradient(145deg, #ffe9d5, #fff2cc);
+}
+
+body.mood-dreamy:not(.night) .story-art {
+  background: linear-gradient(145deg, #e9dcff, #f8e1f2);
+}
+
+body.mood-brave:not(.night) .story-art {
+  background: linear-gradient(145deg, #deebd3, #cfe5c9);
+}
+
+/* Project cards */
+body.mood-happy:not(.night) .project-card,
+body.mood-happy:not(.night) .project-detail,
+body.mood-happy:not(.night) .mood-card,
+body.mood-happy:not(.night) .character-sheet > div {
+  background: #fffdf8;
+  border-color: #f0dfc8;
+}
+
+body.mood-dreamy:not(.night) .project-card,
+body.mood-dreamy:not(.night) .project-detail,
+body.mood-dreamy:not(.night) .mood-card,
+body.mood-dreamy:not(.night) .character-sheet > div {
+  background: #fffaff;
+  border-color: #e6d8f4;
+}
+
+body.mood-brave:not(.night) .project-card,
+body.mood-brave:not(.night) .project-detail,
+body.mood-brave:not(.night) .mood-card,
+body.mood-brave:not(.night) .character-sheet > div {
+  background: #fcfff9;
+  border-color: #d8e5d2;
+}
+
+/* Project art */
+body.mood-happy:not(.night) .project-art {
+  background: linear-gradient(140deg, #ffe5d0, #fff0c9);
+}
+
+body.mood-dreamy:not(.night) .project-art {
+  background: linear-gradient(140deg, #e7d9ff, #f6dfef);
+}
+
+body.mood-brave:not(.night) .project-art {
+  background: linear-gradient(140deg, #dcebd2, #edf0d8);
+}
+
+/* Project links and detail icon */
+body.mood-happy:not(.night) .project-link,
+body.mood-happy:not(.night) .text-link,
+body.mood-happy:not(.night) .about-copy blockquote,
+body.mood-dreamy:not(.night) .project-link,
+body.mood-dreamy:not(.night) .text-link,
+body.mood-dreamy:not(.night) .about-copy blockquote,
+body.mood-brave:not(.night) .project-link,
+body.mood-brave:not(.night) .text-link,
+body.mood-brave:not(.night) .about-copy blockquote {
+  color: var(--green);
+  border-color: var(--border);
+}
+
+body.mood-happy:not(.night) .detail-icon,
+body.mood-happy:not(.night) .detail-close {
+  background: #ffebd2;
+  color: #805536;
+}
+
+body.mood-dreamy:not(.night) .detail-icon,
+body.mood-dreamy:not(.night) .detail-close {
+  background: #eadfff;
+  color: #74559e;
+}
+
+body.mood-brave:not(.night) .detail-icon,
+body.mood-brave:not(.night) .detail-close {
+  background: #deeed9;
+  color: #426d4a;
+}
+
+/* Buttons */
+body.mood-happy:not(.night) .primary-button {
+  background: #a66b3f;
+  border-color: #a66b3f;
+}
+
+body.mood-dreamy:not(.night) .primary-button {
+  background: #8265ae;
+  border-color: #8265ae;
+}
+
+body.mood-brave:not(.night) .primary-button {
+  background: #426d4a;
+  border-color: #426d4a;
+}
+
+body.mood-happy:not(.night) .secondary-button,
+body.mood-happy:not(.night) .icon-button,
+body.mood-happy:not(.night) .sound-toggle,
+body.mood-happy:not(.night) .back-top {
+  color: #986036;
+  border-color: #f0dfc8;
+}
+
+body.mood-dreamy:not(.night) .secondary-button,
+body.mood-dreamy:not(.night) .icon-button,
+body.mood-dreamy:not(.night) .sound-toggle,
+body.mood-dreamy:not(.night) .back-top {
+  color: #74559e;
+  border-color: #e6d8f4;
+}
+
+body.mood-brave:not(.night) .secondary-button,
+body.mood-brave:not(.night) .icon-button,
+body.mood-brave:not(.night) .sound-toggle,
+body.mood-brave:not(.night) .back-top {
+  color: #426d4a;
+  border-color: #d8e5d2;
+}
+
+/* Mood preview */
+body.mood-happy:not(.night) .mood-preview {
+  background: linear-gradient(145deg, #ffe9bd, #ffd9b0);
+}
+
+body.mood-dreamy:not(.night) .mood-preview {
+  background: linear-gradient(145deg, #e7dcff, #f4dff4);
+}
+
+body.mood-brave:not(.night) .mood-preview {
+  background: linear-gradient(145deg, #deebc9, #c1dfb8);
+}
+
+/* Active mood button */
+body.mood-happy:not(.night) .mood-button.active {
+  background: #ffebc8;
+  border-color: #f4b66f;
+  color: #805536;
+}
+
+body.mood-dreamy:not(.night) .mood-button.active {
+  background: #eadfff;
+  border-color: #b69ae8;
+  color: #634a86;
+}
+
+body.mood-brave:not(.night) .mood-button.active {
+  background: #deeed9;
+  border-color: #8dbb91;
+  color: #344d3a;
+}
+
+/* Character area */
+body.mood-happy:not(.night) .about-orb {
+  background: linear-gradient(145deg, #ffe8c4, #f7ddbb);
+}
+
+body.mood-dreamy:not(.night) .about-orb {
+  background: linear-gradient(145deg, #e9ddff, #f5e0f2);
+}
+
+body.mood-brave:not(.night) .about-orb {
+  background: linear-gradient(145deg, #deebd3, #cfe5c9);
+}
+
+/* Small labels and decorative text */
+body.mood-happy:not(.night) .section-kicker,
+body.mood-happy:not(.night) .step-number,
+body.mood-happy:not(.night) .project-number {
+  color: #b6754d;
+}
+
+body.mood-dreamy:not(.night) .section-kicker,
+body.mood-dreamy:not(.night) .step-number,
+body.mood-dreamy:not(.night) .project-number {
+  color: #9271bd;
+}
+
+body.mood-brave:not(.night) .section-kicker,
+body.mood-brave:not(.night) .step-number,
+body.mood-brave:not(.night) .project-number {
+  color: #5d8a60;
+}
+
+/* Preserve Night Mode.
+   Mood colours apply only when body is NOT .night. */
+body.night.mood-happy,
+body.night.mood-dreamy,
+body.night.mood-brave {
+  background: var(--cream);
+  color: var(--dark);
+}
+
+/* Smooth transitions */
+body.mood-happy:not(.night) .navbar,
+body.mood-dreamy:not(.night) .navbar,
+body.mood-brave:not(.night) .navbar,
+body.mood-happy:not(.night) .dreams-section,
+body.mood-dreamy:not(.night) .dreams-section,
+body.mood-brave:not(.night) .dreams-section,
+body.mood-happy:not(.night) .about-section,
+body.mood-dreamy:not(.night) .about-section,
+body.mood-brave:not(.night) .about-section,
+body.mood-happy:not(.night) .story-art,
+body.mood-dreamy:not(.night) .story-art,
+body.mood-brave:not(.night) .story-art,
+body.mood-happy:not(.night) .project-card,
+body.mood-dreamy:not(.night) .project-card,
+body.mood-brave:not(.night) .project-card,
+body.mood-happy:not(.night) .mood-card,
+body.mood-dreamy:not(.night) .mood-card,
+body.mood-brave:not(.night) .mood-card {
+  transition:
+    background-color 0.45s ease,
+    color 0.45s ease,
+    border-color 0.45s ease;
+}
+
+
+/* HAPPY THEME — Baby Blue + White overrides */
+body.mood-happy:not(.night) .navbar {
+  background: #F2F9FF;
+  border-bottom-color: #D6E9F8;
+}
+
+body.mood-happy:not(.night) .eyebrow {
+  background: #DDF0FF;
+  color: #386D96;
+}
+
+body.mood-happy:not(.night) .dream-orb {
+  background: linear-gradient(145deg, #DDF0FF, #FFFFFF);
+}
+
+body.mood-happy:not(.night) .orb-halo {
+  background: #D5ECFF;
+}
+
+body.mood-happy:not(.night) .story-art,
+body.mood-happy:not(.night) .project-art,
+body.mood-happy:not(.night) .mood-preview,
+body.mood-happy:not(.night) .about-orb {
+  background: linear-gradient(145deg, #DDF0FF, #FFFFFF);
+}
+
+body.mood-happy:not(.night) .project-card,
+body.mood-happy:not(.night) .project-detail,
+body.mood-happy:not(.night) .mood-card,
+body.mood-happy:not(.night) .character-sheet > div {
+  background: #FFFFFF;
+  border-color: #D6E9F8;
+}
+
+body.mood-happy:not(.night) .primary-button {
+  background: #6CA9D8;
+  border-color: #6CA9D8;
+  color: #FFFFFF;
+}
+
+body.mood-happy:not(.night) .primary-button:hover {
+  background: #4F94C8;
+}
+
+body.mood-happy:not(.night) .secondary-button,
+body.mood-happy:not(.night) .icon-button,
+body.mood-happy:not(.night) .sound-toggle,
+body.mood-happy:not(.night) .back-top {
+  color: #386D96;
+  border-color: #BFDDF4;
+}
+
+body.mood-happy:not(.night) .mood-button.active {
+  background: #DDF0FF;
+  border-color: #9CCFF2;
+  color: #29445B;
+}
+
+body.mood-happy:not(.night) .detail-icon,
+body.mood-happy:not(.night) .detail-close {
+  background: #DDF0FF;
+  color: #386D96;
+}
+
+body.mood-happy:not(.night) .project-link,
+body.mood-happy:not(.night) .text-link,
+body.mood-happy:not(.night) .about-copy blockquote {
+  color: #386D96;
+}
+
+body.mood-happy:not(.night) .page-glow {
+  background:
+    radial-gradient(ellipse at 80% 12%, #DDF0FF99, transparent 38%),
+    radial-gradient(ellipse at 10% 80%, #FFFFFFCC, transparent 35%);
+}
+
+/* =========================================
+   MOCHI'S WORLD — STORY SCROLL ANIMATIONS
+   ========================================= */
+
+/* Smooth reveal as each story chapter enters view */
+.story-timeline .story-step {
+  animation: mochiStoryReveal linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  will-change: opacity, transform;
+}
+
+@keyframes mochiStoryReveal {
+  from {
+    opacity: 0;
+    transform: translateY(65px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Chapter artwork gets a gentle floating effect */
+.story-art {
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.story-art:hover {
+  transform: translateY(-8px) rotate(-2deg);
+  box-shadow: 0 18px 35px rgba(90, 155, 205, 0.16);
+}
+
+/* Little icons float inside each chapter */
+.story-art > span {
+  display: inline-block;
+  animation: mochiStoryFloat 3s ease-in-out infinite;
+}
+
+.story-art > i {
+  animation: mochiStorySparkle 2s ease-in-out infinite;
+}
+
+@keyframes mochiStoryFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes mochiStorySparkle {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.85) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(18deg);
+  }
+}
+
+/* Story ending reveal */
+.story-ending {
+  animation: mochiEndingReveal linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+}
+
+@keyframes mochiEndingReveal {
+  from {
+    opacity: 0.25;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility: respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .story-timeline .story-step,
+  .story-ending {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .story-art > span,
+  .story-art > i {
+    animation: none;
+  }
+
+  .story-art {
+    transition: none;
+  }
+}
+
+/* =========================================
+   MOCHI'S MAGICAL STORY GAME
+   ========================================= */
+
+.mochi-game {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.mochi-game .section-heading {
+  margin-bottom: 30px;
+}
+
+.game-card {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid rgba(165, 111, 67, 0.2);
+  border-radius: 28px;
+  background: #fffaf3;
+  box-shadow: 0 16px 45px rgba(75, 55, 35, 0.09);
+}
+
+.game-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #654a37;
+  font-size: 14px;
+}
+
+.game-scene {
+  position: relative;
+  min-height: 290px;
+  overflow: hidden;
+  padding: 25px 18px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #dceaff 0%, #f4e8ff 55%, #d9f1d5 100%);
+}
+
+.game-moon {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 34px;
+}
+
+.game-character {
+  margin-top: 12px;
+  font-size: 76px;
+  animation: mochiGameFloat 2.5s ease-in-out infinite;
+}
+
+#mochiGameMessage {
+  position: relative;
+  z-index: 1;
+  color: #49364c;
+  font-weight: 600;
+}
+
+.game-stars {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.game-star {
+  border: 0;
+  border-radius: 50%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.game-star:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.game-star.collected {
+  opacity: 0.35;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+.game-button {
+  margin-top: 22px;
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 25px;
+  background: #a56f43;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.game-button:hover {
+  background: #855432;
+  transform: translateY(-2px);
+}
+
+.game-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.game-unlock-message {
+  color: #765d4b;
+  font-size: 14px;
+}
+
+@keyframes mochiGameFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .game-card {
+    padding: 14px;
+  }
+
+  .game-scene {
+    min-height: 260px;
+    padding: 18px 10px;
+  }
+
+  .game-stats {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-character {
+    animation: none;
+  }
+}
+
+/* Mochi Story Choices */
+.mochi-story-choices {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.mochi-story-choices p {
+  margin-bottom: 14px;
+  color: #49364c;
+  font-weight: 600;
+}
+
+.mochi-choice {
+  display: inline-block;
+  margin: 6px;
+  padding: 12px 16px;
+  border: 1px solid #e5c8ef;
+  border-radius: 24px;
+  background: #fff;
+  color: #654a76;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.mochi-choice:hover {
+  transform: translateY(-3px);
+  background: #f4e8ff;
+}
+
+.mochi-choice:focus-visible {
+  outline: 3px solid #a56f43;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .mochi-choice {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+#hiddenFlower {
+  position: fixed;
+  top: 100px;
+  left: 15px;
+  z-index: 9999;
+  pointer-events: auto;
+  cursor: pointer;
+}

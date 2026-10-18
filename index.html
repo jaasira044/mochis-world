@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fbf8ef">
+  <meta name="description" content="Enter Mochi's magical dream world, where tiny wishes become beautiful worlds.">
+  <title>Mochi — The Little Dream Weaver</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <div class="page-glow" aria-hidden="true"></div>
+
+  <header class="navbar">
+    <a href="#home" class="logo"><span>☁</span> Mochi's World</a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#story">Story</a>
+      <a href="#dreams">Dreams</a>
+      <a href="#about">About</a>
+      <button class="icon-button" id="navNightToggle" aria-label="Toggle night mode">☾</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="pulse-dot"></span> A tiny dream-maker's universe</span>
+
+        <h1>Small paws.<br>Big <span class="coral-text">dreams.</span></h1>
+
+        <p class="hero-description">
+          Hi, I'm Mochi! I turn tiny ideas into floating islands,
+          sleepy clouds, and little bits of magic.
+          Wanna see what I've been dreaming up?
+        </p>
+
+        <div class="hero-actions">
+          <a href="#story" class="primary-button">Enter my dream world <span>↗</span></a>
+          <button class="secondary-button" id="meetMochi">Meet Mochi ♡</button>
+        </div>
+
+        <div class="tiny-note"><span>✦</span> Made of stardust and little wishes</div>
+      </div>
+
+      <div class="scene" id="homeScene" aria-label="Mochi's magical floating island">
+        <div class="orb-halo"></div>
+        <div class="dream-orb"></div>
+
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+        <div class="cloud cloud-three"></div>
+
+        <span class="star star-one">✦</span>
+        <span class="star star-two">✧</span>
+        <span class="star star-three">✦</span>
+        <span class="star star-four">✧</span>
+
+        <div class="floating-island"></div>
+        <div class="island-grass"></div>
+
+        <div class="flower flower-one">✿</div>
+        <div class="flower flower-two">✿</div>
+
+        <img
+          src="./mochi.png"
+          alt="Mochi, the fluffy little dream-weaver bunny"
+          class="mochi-character"
+          id="mochiCharacter"
+          role="button"
+          tabindex="0"
+          aria-label="Click Mochi for a little surprise"
+          draggable="false"
+        >
+
+        <div class="scene-label" id="sceneLabel">☀ Mochi is feeling sunny</div>
+        <span class="scene-hint">Psst... try clicking Mochi!</span>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story-section section-wrap" id="story">
+      <div class="section-heading reveal">
+        <span class="section-kicker">01 — Once upon a little cloud</span>
+        <h2>Every dream starts <span class="coral-text">tiny.</span></h2>
+        <p>
+          Somewhere above the sleepy clouds, a little bunny discovered
+          that even the smallest wish could grow into something wonderful.
+        </p>
+      </div>
+
+      <div class="story-timeline">
+        <article class="story-step reveal">
+          <div class="story-art art-cloud"><span>☁️</span><i>✦</i></div>
+          <div class="story-copy">
+            <span class="step-number">CHAPTER 01</span>
+            <h3>A bunny in the clouds</h3>
+            <p>
+              Mochi lived on a quiet little cloud, collecting tiny thoughts
+              and wishes that people had almost forgotten.
+            </p>
+          </div>
+        </article>
+
+        <article class="story-step reverse reveal">
+          <div class="story-art art-seed"><span>🌱</span><i>✧</i></div>
+          <div class="story-copy">
+            <span class="step-number">CHAPTER 02</span>
+            <h3>The little dream seed</h3>
+            <p>
+              One night, a glowing seed fell from a star.
+              Mochi planted it and discovered that kindness could make
+              even the tiniest idea bloom.
+            </p>
+          </div>
+        </article>
+
+        <article class="story-step reveal">
+          <div class="story-art art-island"><span>🏝️</span><i>✦</i></div>
+          <div class="story-copy">
+            <span class="step-number">CHAPTER 03</span>
+            <h3>A world of wishes</h3>
+            <p>
+              The seed became a floating garden. From then on,
+              Mochi helped little wishes grow into magical worlds,
+              one dream at a time.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="story-ending reveal">
+        <span>✧</span>
+        <p>And that, little dreamer, is where our story begins.</p>
+        <a href="#dreams" class="text-link">Discover Mochi's dreams ↓</a>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="dreams-section" id="dreams">
+      <div class="section-wrap">
+        <div class="section-heading reveal">
+          <span class="section-kicker">02 — Little things, made with love</span>
+          <h2>Dreams I've <span class="coral-text">grown.</span></h2>
+          <p>
+            Every project started with a tiny "what if?"
+            Choose a little world and peek inside its story.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <button class="project-card reveal" data-project="wish" aria-expanded="false">
+            <span class="project-art wish-art"><span>✉️</span><i>✦</i></span>
+            <span class="project-number">DREAM 001</span>
+            <span class="project-title">Wish Notes</span>
+            <span class="project-description">A pocket-sized place for your wishes and little thoughts.</span>
+            <span class="project-link">Open this dream <span>↗</span></span>
+          </button>
+
+          <button class="project-card reveal" data-project="sprout" aria-expanded="false">
+            <span class="project-art sprout-art"><span>🌱</span><i>✧</i></span>
+            <span class="project-number">DREAM 002</span>
+            <span class="project-title">Little Sprout</span>
+            <span class="project-description">A tiny garden where small steps grow into something lovely.</span>
+            <span class="project-link">Open this dream <span>↗</span></span>
+          </button>
+
+          <button class="project-card reveal" data-project="orbit" aria-expanded="false">
+            <span class="project-art orbit-art"><span>🪐</span><i>✦</i></span>
+            <span class="project-number">DREAM 003</span>
+            <span class="project-title">Orbit of Dreams</span>
+            <span class="project-description">A little universe connecting ideas, hopes and possibilities.</span>
+            <span class="project-link">Open this dream <span>↗</span></span>
+          </button>
+        </div>
+
+        <div class="project-detail" id="projectDetail" hidden aria-live="polite">
+          <div class="detail-icon" id="detailIcon">✉️</div>
+          <div class="detail-copy">
+            <span class="section-kicker" id="detailKicker">A LITTLE DREAM</span>
+            <h3 id="detailTitle">Wish Notes</h3>
+            <p id="detailDescription"></p>
+            <p class="detail-extra" id="detailExtra"></p>
+          </div>
+          <button class="detail-close" id="closeProject" aria-label="Close project details">×</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOOD MAGIC -->
+    <section class="mood-section section-wrap" id="mood">
+      <div class="mood-intro reveal">
+        <span class="section-kicker">03 — A little magic, just for you</span>
+        <h2>Change the sky.<br><span class="coral-text">Change the feeling.</span></h2>
+        <p>
+          Every day feels a little different. Pick Mochi's mood
+          and watch the dream world change with it.
+        </p>
+      </div>
+
+      <div class="mood-card reveal">
+        <div class="mood-preview" id="moodPreview">
+          <span class="preview-sun">☀</span>
+          <span class="preview-star">✦</span>
+          <span class="preview-cloud">☁</span>
+          <div class="preview-message" id="moodMessage">Today is a lovely day for dreaming.</div>
+        </div>
+
+        <div class="mood-controls">
+          <button class="mood-button active" data-mood="happy" aria-pressed="true">
+            <span>☀️</span> Happy
+          </button>
+          <button class="mood-button" data-mood="dreamy" aria-pressed="false">
+            <span>🌙</span> Dreamy
+          </button>
+          <button class="mood-button" data-mood="brave" aria-pressed="false">
+            <span>🌿</span> Brave
+          </button>
+        </div>
+        <p class="mood-caption" id="moodCaption">Mochi found a sunny little spot just for you.</p>
+      </div>
+    </section>
+
+    <!-- CHARACTER -->
+    <section class="about-section" id="about">
+      <div class="section-wrap about-grid">
+        <div class="about-visual reveal">
+          <div class="about-orb"></div>
+          <span class="about-star about-star-one">✦</span>
+          <span class="about-star about-star-two">✧</span>
+          <img src="./mochi.png" alt="Mochi wearing a pink scarf" class="about-mochi" loading="lazy">
+          <div class="about-sticker">little dreamer ♡</div>
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="section-kicker">04 — Meet the dream weaver</span>
+          <h2>That's me, <span class="coral-text">Mochi.</span></h2>
+          <p>
+            A fluffy little bunny with a pocket full of stardust
+            and a big belief in small beginnings.
+          </p>
+
+          <div class="character-sheet">
+            <div><span>♡</span><p><small>NAME</small><strong>Mochi</strong></p></div>
+            <div><span>☁</span><p><small>SPECIES</small><strong>Cloud Bunny</strong></p></div>
+            <div><span>✦</span><p><small>SPECIAL TALENT</small><strong>Growing tiny dreams</strong></p></div>
+            <div><span>🌷</span><p><small>PERSONALITY</small><strong>Gentle & curious</strong></p></div>
+            <div><span>🌙</span><p><small>HOMELAND</small><strong>A floating garden</strong></p></div>
+            <div><span>✨</span><p><small>FAVOURITE THING</small><strong>Little wishes</strong></p></div>
+          </div>
+
+          <blockquote>“Every big dream begins with a tiny wish.”</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECRET EASTER EGG -->
+    <section class="secret-section">
+      <div class="secret-inner reveal">
+        <div class="secret-flower">🌷</div>
+        <span class="section-kicker">05 — Psst... a tiny secret</span>
+        <h2>Magic hides in <span>plain sight.</span></h2>
+        <p>
+          Mochi left a little secret somewhere in this garden.
+          Can you find the hidden flower?
+        </p>
+        <button class="secret-button" id="secretHint">Give me a little hint ✧</button>
+        <p class="secret-result" id="secretResult" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <a href="#home" class="logo">☁ Mochi's World</a>
+      <p>Made with a little imagination and lots of kindness.</p>
+      <div class="footer-actions">
+        <button class="sound-toggle" id="soundToggle" aria-pressed="false">🔇 Sound off</button>
+        <a href="#home" class="back-top">Back to the clouds ↑</a>
+      </div>
+      <small>© <span id="year"></span> Mochi's Dream World · Keep dreaming, little star.</small>
+    </footer>
+  </main>
+
+  <!-- The hidden flower can be discovered anywhere on the page -->
+  <button id="hiddenFlower" class="hidden-flower" aria-label="A mysterious hidden flower" title="A tiny flower">✿</button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  
+  <div id="bunnyCursor" aria-hidden="true">🥕</div>
+  
+<!-- MOCHI'S MAGICAL GAME -->
+<section id="mochiGame" class="section-wrap mochi-game">
+  <div class="section-heading">
+    <p class="eyebrow">A LITTLE MAGICAL ADVENTURE</p>
+    <h2>Play with Mochi ✨</h2>
+    <p>Collect stars and unlock your next adventure!</p>
+  </div>
+
+  <div class="game-card">
+    <div class="game-stats">
+      <span>⭐ Stars: <strong id="mochiStarCount">0</strong></span>
+      <span>📖 Chapter: <strong id="mochiChapterCount">1</strong></span>
+    </div>
+
+    <div id="mochiGameScene" class="game-scene">
+      <div class="game-moon">🌙</div>
+      <div id="mochiGameCharacter" class="game-character">🐰</div>
+      <p id="mochiGameMessage">Mochi found a magical forest! Collect the stars!</p>
+      
+<div id="mochiStoryChoices" class="mochi-story-choices" hidden>
+  <p>Which path should Mochi choose? 🌟</p>
+  <button type="button" class="mochi-choice" data-choice="forest">🌳 Enchanted Forest</button>
+  <button type="button" class="mochi-choice" data-choice="moon">🌙 Moon Garden</button>
+</div>
+
+      <div id="mochiGameStars" class="game-stars">
+        <button class="game-star" data-star="1" aria-label="Collect star 1">⭐</button>
+        <button class="game-star" data-star="2" aria-label="Collect star 2">⭐</button>
+        <button class="game-star" data-star="3" aria-label="Collect star 3">⭐</button>
+      </div>
+    </div>
+
+    <button id="mochiNextChapter" class="game-button">Start Adventure ✨</button>
+    <p id="mochiUnlockMessage" class="game-unlock-message">Collect all 3 stars to unlock the next chapter.</p>
+  </div>
+  
+<div class="mochi-levels">
+  <h3>🗺️ Mochi's Adventure Map</h3>
+  <button class="game-button" data-level="1">🌳 Level 1 — Forest</button>
+  <button class="game-button" data-level="2" disabled>🌙 Level 2 — Moon Garden 🔒</button>
+  <button class="game-button" data-level="3" disabled>🏰 Level 3 — Rainbow Castle 🔒</button>
+  <p id="mochiLevelMessage">Collect 3 stars to unlock Level 2!</p>
+</div>
+
+</section>
+
+</body>
+</html>
+
